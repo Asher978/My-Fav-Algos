@@ -1,0 +1,19 @@
+{
+  "name": "algos",
+  "version": "1.0.0",
+  "description": "ALGOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asher978/My-Fav-Algos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Asher978/My-Fav-Algos/issues"
+  },
+  "homepage": "https://github.com/Asher978/My-Fav-Algos#readme"
+}
