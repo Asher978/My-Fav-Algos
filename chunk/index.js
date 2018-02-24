@@ -6,6 +6,8 @@ chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
 chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
 */
 
+/* SOULTION # 1 
+
 function chunk (array, size) {
   const chunked = [];
   
@@ -25,6 +27,22 @@ function chunk (array, size) {
       // otherwise just push that element into the array in chunked array
       last.push(element);
     }
+  }
+  return chunked;
+}; 
+*/
+
+// SOULTION # 2
+function chunk (array, size) {
+  const chunked = [];
+  let index = 0;
+
+  // The condition below will be true as long as we are working
+  // with the index from the array. Once the index becomes outside
+  // the array we will break from the while loop.
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size;
   }
   return chunked;
 };
