@@ -29,6 +29,4 @@ function chunk (array, size) {
   return chunked;
 };
 
-chunk([2, 4, 2, 5, 7, 8, 1], 3);
-
 module.exports = chunk;
