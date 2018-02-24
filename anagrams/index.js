@@ -6,7 +6,7 @@ or punctuation.  Consider capital letters to be the same as lower case
 */
 
 
-// SOLUTION # 1 
+/* SOLUTION # 1 
 function anagrams (stringA, stringB) {
   
   const mapOne = mapString(stringA);
@@ -37,6 +37,21 @@ function mapString (str) {
   }
   return strObj;
 }; 
+*/
 
+// SOLUTION # 2
+function anagrams (stringA, stringB) {
+
+  const strA = cleanString(stringA);
+  const strB = cleanString(stringB);
+
+  return strA === strB;
+
+};
+
+// helper func to clean the strings
+function cleanString (str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join(''); 
+}
 
 module.exports = anagrams;
