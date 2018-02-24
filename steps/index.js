@@ -17,7 +17,7 @@
 //       '####'
 
 
-// SOULTION # 1
+/* SOULTION # 1
 function steps (n) {
 
   for (let row = 0; row < n; row ++) {
@@ -33,6 +33,33 @@ function steps (n) {
     }
     console.log(stairs)
   }
+};
+*/
+
+// SOLUTION # 2 (with recursion)
+function steps (n, row=0, stairs='') {
+
+  // base case
+  if (n === row) { return };
+
+  // case where we are done with the row
+  if (stairs.length === n) {
+    console.log(stairs);
+    return steps(n, row + 1);
+  };
+
+  // case where we are building the row
+  if (stairs.length <= row) {
+    stairs += '#';
+  } else {
+    stairs += ' ';
+  }
+
+  // refactor of ^^^ above if statement
+  // const add = stairs.length <= row ? '#' : ' ';
+  // steps(n, row, starirs + add);
+  
+  steps(n, row, stairs);
 };
 
 
