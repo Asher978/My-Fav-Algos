@@ -13,12 +13,12 @@
 //       ' ### '
 //       '#####'
 
-// Iterative Solution 
+/* Iterative Solution 
 function pyramid (n) {
 
   // middle of column index
   // (2*n-1) is the relation between (n) and number of columsn we should have
-  const midColInd = Math.floor((2*n-1) / 2); 
+  const midColInd = Math.floor((2*n-1) / 2);
 
 
   for (let row = 0; row < n; row ++) {
@@ -36,6 +36,29 @@ function pyramid (n) {
     }
     console.log(level);
   }
-};
+}; */
+
+// recursive solution
+function pyramid (n, row=0, level='') {
+
+  // base case
+  if (row === n) { return };
+
+  // case where we are done with the level row
+  if (level.length === 2 * n - 1) {
+    console.log(level);
+    return pyramid(n, row + 1);
+  }
+
+  // case where we are building the level
+  let midColInd = Math.floor((2*n-1) / 2);
+  if (midColInd - row <= level.length && midColInd + row >= level.length) {
+    level += '#';
+  } else {
+    level += ' ';
+  }
+
+  pyramid(n, row, level);
+}
 
 module.exports = pyramid;
