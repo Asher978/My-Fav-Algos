@@ -20,13 +20,44 @@ function fib (n) {
   return results[n];
 }; */
 
-// recursive solution - has exponential run time (2 ^ n)
+/* recursive solution - has exponential run time (2 ^ n)
 function fib (n) {
 
   // base case
   if (n < 2) return n;
+
+  return fib(n - 1) + fib(n - 2);
+}; */
+
+// recursive solution - with memoization for a better time complexity
+function slowFib (n) {
   
+  // base case
+  if (n < 2) return n;
   return fib(n - 1) + fib(n - 2);
 };
+
+// memoization function
+function memoize (fn) {
+  
+  // object that will hold the func args and its values
+  const cache = {};
+
+  return (...args) => {
+    if(cache[args]) return cache[args];
+
+    // if the called arg does not exist in the obj that
+    // means the fn has never been called with that arg
+    // so store the result of that fn with the arg
+    const result = fn.apply(this, args);
+
+    // storing the result to the obj
+    cache[args] = result;
+    return result;
+  }
+};
+
+const fib = memoize(slowFib)
+
 
 module.exports = fib;
