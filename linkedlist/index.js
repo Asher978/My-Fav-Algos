@@ -34,6 +34,21 @@ class LinkedList {
     return this.head;
   };
 
+  // getting the last element from the linkedlist
+  getLast () {
+    let node = this.head;
+    
+    while(node) {  
+      if(!node.next) return node;
+      node = node.next;
+    };
+    return node;
+  };
+
+  // clear out the list
+  clear () {
+    this.head = null;
+  }
 
 };
 
