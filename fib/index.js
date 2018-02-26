@@ -7,7 +7,7 @@
 // Example:
 //   fib(4) === 3
 
-// iterative solution 
+/* iterative solution 
 function fib (n) {
 
   const results = [0, 1];
@@ -18,6 +18,15 @@ function fib (n) {
     results.push(a+b);
   }
   return results[n];
+}; */
+
+// recursive solution - has exponential run time (2 ^ n)
+function fib (n) {
+
+  // base case
+  if (n < 2) return n;
+  
+  return fib(n - 1) + fib(n - 2);
 };
 
 module.exports = fib;
