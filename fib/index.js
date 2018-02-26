@@ -30,11 +30,12 @@ function fib (n) {
 }; */
 
 // recursive solution - with memoization for a better time complexity
-function slowFib (n) {
+function fib (n) {
   
   // base case
   if (n < 2) return n;
   return fib(n - 1) + fib(n - 2);
+  
 };
 
 // memoization function
@@ -54,10 +55,10 @@ function memoize (fn) {
     // storing the result to the obj
     cache[args] = result;
     return result;
-  }
+  };
 };
 
-const fib = memoize(slowFib)
+fib = memoize(fib);
 
 
 module.exports = fib;
