@@ -28,6 +28,13 @@ class LinkedList {
     }
     return count;
   };
+
+  // get the first element in the linkedlist
+  getFirst () {
+    return this.head;
+  };
+
+
 };
 
 module.exports = { Node, LinkedList };
