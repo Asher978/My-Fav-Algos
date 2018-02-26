@@ -50,6 +50,35 @@ class LinkedList {
     this.head = null;
   }
 
+  // removing the first node
+  removeFirst () {
+    if(!this.head) return;
+    this.head = this.head.next;
+  };
+
+  // remove the last element
+  removeLast () {
+
+    // if the list is empty
+    if(!this.head) return;
+
+    // if the list has only ONE element
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    };
+
+    // if the list has more than one element
+    let prevNode = this.head;
+    let currNode = this.head.next;
+
+    while(currNode.next) {
+      prevNode = currNode;
+      currNode = currNode.next;
+    }
+    prevNode.next = null;
+  };
+
 };
 
 module.exports = { Node, LinkedList };
