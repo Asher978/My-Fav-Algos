@@ -106,9 +106,21 @@ class LinkedList {
     return null;
   };
 
-  removeAt () {
-    
-  }
+  // removing a specific index
+  removeAt (index) {
+    // no elemenst exist
+    if (!this.head) return;
+
+    // if only one element
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    const prevIndex = this.getAt(index-1);
+    if (!prevIndex || !prevIndex.next) return;
+    prevIndex.next = prevIndex.next.next;
+  };
 
 };
 
