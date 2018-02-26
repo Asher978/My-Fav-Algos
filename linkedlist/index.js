@@ -79,6 +79,19 @@ class LinkedList {
     prevNode.next = null;
   };
 
+  insertLast (value) {
+
+    const last = this.getLast();
+
+    if (last) {
+      // list is not empty
+      last.next = new Node(value);
+    } else {
+      // list is empty
+      this.head = new Node(value);
+    }
+  }
+
 };
 
 module.exports = { Node, LinkedList };
