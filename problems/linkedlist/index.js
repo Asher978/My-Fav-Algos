@@ -122,6 +122,27 @@ class LinkedList {
     prevIndex.next = prevIndex.next.next;
   };
 
+  // inserting an element at a specific index
+  insertAt (data, index) {
+    
+    // if the list is empty
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    };
+
+    // if the list has only one element
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    };
+
+    const previous = this.getAt(index-1) || this.getLast();
+    const node = new Node(data, previous.next);
+    previous.next = node;
+
+  };
+
 };
 
 module.exports = { Node, LinkedList };
