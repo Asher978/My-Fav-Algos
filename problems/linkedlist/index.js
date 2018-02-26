@@ -91,7 +91,22 @@ class LinkedList {
     }
   };
 
-  getAt () {
+  // grab an element at a certain index from the list
+  getAt (index) {
+    let node = this.head;
+    let counter = 0;
+
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      node = node.next;
+      counter++;
+    }
+    return null;
+  };
+
+  removeAt () {
     
   }
 
