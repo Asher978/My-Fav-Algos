@@ -80,7 +80,6 @@ class LinkedList {
   };
 
   insertLast (value) {
-
     const last = this.getLast();
 
     if (last) {
@@ -90,6 +89,10 @@ class LinkedList {
       // list is empty
       this.head = new Node(value);
     }
+  };
+
+  getAt () {
+    
   }
 
 };
